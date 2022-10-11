@@ -1,0 +1,32 @@
+body {
+    background-color: #c3ef5d;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+  
+.container {
+    background-color: #fff;
+    padding: 50px 80px 50px 80px;
+    border-radius: 20px;
+}
+  
+h1 {
+    margin-bottom: 50px;
+    text-align: center;
+}
+  
+textarea {
+    width: 500px;
+}
+
+#output{
+background-color: rgb(43, 226, 183);
+padding: 50px 80px 50px 80px;
+border: 2px solid  rgb(110, 109, 109);
+border-radius: 10px;
+
+
+  }
+  

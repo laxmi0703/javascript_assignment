@@ -1,0 +1,38 @@
+body{
+    background-color: #27b9cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+}
+
+.container{
+    background-color: #fff;
+    width: 250px;
+    height: 100px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+#words{
+    color: white;
+    font-size: large;
+}
+.display{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+    font-size: 40px;
+}
+.button{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.click{
+    margin-top: 10px;
+}

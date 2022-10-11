@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Countdown App</h1>
+      <div class="display">
+        <span id="hour">00</span>: <span id="minute">01</span>: <span id="second">00</span>
+        
+      </div>
+      <div class="button">
+        <button id="start" type="button">Start</button>
+        <button id="stop" type="button">Stop</button>
+        <button id="reset" type="button">Reset</button>
+        <!-- <button id="add" type="button">add</button> -->
+      </div>
+    </div>
+
+    <script>
+      let hour = document.querySelector("#hour");
+      let minute = document.querySelector("#minute");
+      let second = document.querySelector("#second");
+      let startBtn = document.querySelector("#start");
+      let stopBtn = document.querySelector("#stop");
+      let resetBtn = document.querySelector("#reset");
+
+      var secondTime = 60;
+      var minuteTime = 1;
+      var hourTime = 24;
+      var timerId;
+
+
+      startBtn.addEventListener("click", function(){
+        timerId = setInterval(function(){
+          handleTime()
+        },100)
+      })
+
+      stopBtn.addEventListener("click", function(){
+          clearInterval(timerId)
+      })
+
+      resetBtn.addEventListener("click", function(){
+        clearInterval(timerId)
+        hour.textContent = "00";
+        minute.textContent = "15";
+        second.textContent = "00"
+        secondTime = 60;
+        minuteTime = 1;
+        hourTime = 24;
+      })
+
+
+      function handleTime() {
+        //minuteTime = parseInt(minuteTime) - 1;
+        if(secondTime == 60){
+          minuteTime = parseInt(minuteTime) - 1;
+        }
+        secondTime = parseInt(secondTime) - 1;
+        if(secondTime < 10) {
+          secondTime =  `0${secondTime}`
+        }
+        if(parseInt(secondTime) <= 0){
+          secondTime = 59;
+          minuteTime = parseInt(minuteTime) - 1
+        }
+        if(parseInt(minuteTime) < 10) {
+          minuteTime =  `0${parseInt(minuteTime)}`
+        }
+
+        // if(parseInt(minuteTime) <= 0){
+        //   minuteTime = 59;
+        //   hourTime = parseInt(hourTime) - 1
+        // }
+        // if(parseInt(hourTime) < 10) {
+        //   hourTime =  `0${parseInt(hourTime)}`
+        // }
+
+        if(hourTime == 0 && secondTime == 60 && minuteTime == 0) {
+          clearInterval(timerId);
+        }
+
+       // hour.textContent = hourTime.toString();//"00";
+        minute.textContent = minuteTime.toString();
+        second.textContent = secondTime.toString();
+
+      }
+    </script>
+  </body>
+</html>

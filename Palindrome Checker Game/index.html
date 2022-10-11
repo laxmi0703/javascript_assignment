@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Palindrome Checker</div>
+        <textarea onChange="" id="description" name="description" inputmode="check" >
+         </textarea>
+
+        <button id="button">Check</button>
+    </div>
+
+
+</body>
+
+<script>
+// code here
+ let button = document.querySelector("#button");
+ button.addEventListener("click", Palindrome)
+ function Palindrome(text) {
+    let input = document.querySelector("#description").value;
+    let trim_input = input.trim();
+    let input_array = trim_input.split("");
+    let output = input_array.reverse().join("");
+    if(trim_input == output ){
+        alert("it is Palindrome");
+    }else
+    {
+        alert("it is not Palindrome");  
+    }
+
+ }
+
+
+
+
+
+
+
+</script>
+
+</html>

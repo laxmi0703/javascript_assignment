@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title> Random Quote Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Random Quote Generator</h3>
+      <div id="Quote" class="Quote">Quote goes here</div>
+      <button id="QuoteBtn" class="btn">Get Another Quote</button>
+    </div>
+
+
+<script>
+//code here
+
+let button = document.querySelector("#QuoteBtn");
+
+var quotes = ["Don’t tell people your plans. Show them your results.",
+             "No pressure, no diamonds.",
+            "We can do anything we want to if we stick to it long enough.",
+            "Stay foolish to stay sane. Maxime Lagacé ",
+            "When nothing goes right, go left.",
+            "Try Again. Fail again. Fail better.",
+            "Impossible is for the unwilling.",];
+            
+    function quotesGenerator () {
+        let quotetext = Math.floor(Math.random() * (quotes.length));
+        document.getElementById('Quote').innerHTML = quotes[quotetext];
+}
+          
+button.addEventListener("click",quotesGenerator);
+
+
+</script>
+
+</html>

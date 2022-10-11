@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count App</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="title">Word Counter </div>
+        <textarea  onChange="" id="description" name="description" >
+         </textarea>       
+    </div>
+    <div class="status">
+        <span id = "words"></span>
+    </div>
+
+</body>
+
+<script>
+// code here
+const textArea =  document.getElementById('description');
+
+textArea.addEventListener('input', () => {
+    var textLn =  textArea.value;
+
+  document.getElementById('words').innerHTML='Total words: '+getWordCount(textLn);
+});
+
+
+function getWordCount(str) {
+     return str.trim().split(" ").length;
+}
+
+
+
+</script>
+</html>

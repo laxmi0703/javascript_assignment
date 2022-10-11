@@ -1,0 +1,23 @@
+body{
+    background-color: #27b9cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+}
+
+.container{
+    background-color: #fff;
+    width: 500px;
+    height: 150px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+#words{
+    color: white;
+    font-size: large;
+}
