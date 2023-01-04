@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Number is positive  or Negative</title>
+    <script>
+   function check(){
+    var value = document.getElementById("check").value;
+    // var result = Math.sign(value);
+    document.getElementById("result").innerText = result;
+    if(value >0){
+        result = `${value} is Positive Number`;
+      }else if(value <0){
+         result = `${value} is Negative Number`; 
+      }else if (value == 0){
+        result = `${value} is Zero`; 
+      }
+   }
+    </script>
+</head>
+<body>
+<input type="text" name="check" id="check">
+<button onclick="check()">Check</button>
+<h1 id="result"></h1>
+</body>
+</html>
